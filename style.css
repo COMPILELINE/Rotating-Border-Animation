@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+}
+
+div{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #151320;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+div::before{
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background-image: conic-gradient(
+        #0d0acf 20deg,
+        transparent 120deg
+    );
+    top: -25%;
+    left: -25%;
+    animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+div::after{
+    content: 'AWESOME';
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    background-color: #151320;
+    top: 3%;
+    left: 3%;
+    font-size: 30px;
+    color: #0d0acf;
+    font-family: monospace;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
